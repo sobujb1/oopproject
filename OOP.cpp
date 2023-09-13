@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//ABSTRACTION
 class Calculator{
     public:
         virtual int add(int x, int y) = 0;
@@ -24,13 +25,8 @@ class Person{
         string firstName;
         string lastName;
         int age;
-};
 
-class Student:public Person{
-    public:
-        int studentID;
-        string grade;
-
+        //POLYMORPHISM(OVERLOADING)
         void setfirstName(string f){
             firstName = f;
         }
@@ -51,8 +47,15 @@ class Student:public Person{
         int getage(){
             return age;
         }
+};
 
-        void setstudentID(int i){
+//INHERITANCE
+class Student:public Person{
+    public: //ENCAPSULATION
+        int studentID;
+        string grade;
+
+        void setstudentID(int i){ //ENCAPSULATION(set get method)
             studentID = i;
         }
         int getstudentID(){
@@ -80,27 +83,6 @@ class Teacher:public Person{
     public:
         int employeeID;
         string subject;
-
-        void setfirstName(string f){
-            firstName = f;
-        }
-        string getfirstName(){
-            return firstName;
-        }
-
-        void setlastName(string l){
-            lastName = l;
-        }
-        string getlastName(){
-            return lastName;
-        }
-
-        void setage(int a){
-            age = a;
-        }
-        int getage(){
-            return age;
-        }
 
         void setemployeeID(int e){
             employeeID = e;
